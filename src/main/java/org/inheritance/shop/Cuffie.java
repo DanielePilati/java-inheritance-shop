@@ -22,7 +22,11 @@ public class Cuffie extends Prodotto{
 		this.colore = colore;
 		this.isWireless = isWireless;
 	}
-
+	public Cuffie (String nome, String marca, String colore, boolean isWireless, double prezzo) {
+		super(nome, marca, prezzo);
+		this.colore = colore;
+		this.isWireless = isWireless;
+	}
 	
 	
 	public String getColore() {
