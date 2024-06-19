@@ -8,6 +8,12 @@ public class SerioUtil {
 		return (short) ((Math.random()* (max - min + 1)) + min);
 	}
 	
+	public static long getRandomLong() {
+		long max = 999999999;
+		long min = 000000000;
+		return (long) ((Math.random()* (max - min + 1)) + min);
+	}
+	
 	public static String format05Left(int code) {
 		return String.format("%05d",code);
 	}
@@ -15,8 +21,16 @@ public class SerioUtil {
 		return String.format("%05d",code);
 	}
 
-	
-	
+	public static String format09Left(int code) {
+		return String.format("%09d",code);
+	}
+	public static String format09Left(short code) {
+		return String.format("%09d",code);
+	}
+	public static String format09Left(long code) {
+		return String.format("%09d",code);
+	}
+
 	
 	
 	

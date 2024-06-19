@@ -9,7 +9,6 @@ public class Prodotto {
 	protected double prezzo;
 	protected double iva;
 	
-	
 	public Prodotto() {
 		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
 	}
@@ -68,4 +67,13 @@ public class Prodotto {
 		this.iva = iva;
 	}
 	
+	public void dettagliProdotto() {
+		System.out.println("--------------- Dettagli Prodotto --------------");
+		System.out.println("Codice : " + this.codice);
+		System.out.println("Nome : " + this.nome);
+		System.out.println("Marca : " + this.marca);
+		System.out.println("Prezzo : " + this.marca);
+		System.out.println("iva : " + this.marca);
+		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
 }
