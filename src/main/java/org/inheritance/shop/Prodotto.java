@@ -10,29 +10,29 @@ public class Prodotto {
 	protected double iva;
 	
 	public Prodotto() {
-		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.codice = SerioUtil.getRandomCode();;
 	}
 	
 	public Prodotto(String nome) {
-		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.codice = SerioUtil.getRandomCode();;
 		this.nome = nome;
 	}
 	
 	public Prodotto(String nome, String marca) {
-		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.codice = SerioUtil.getRandomCode();;
 		this.nome = nome;
 		this.marca = marca;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo) {
-		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.codice = SerioUtil.getRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo, double iva) {
-		this.codice = SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.codice = SerioUtil.getRandomCode();;
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;

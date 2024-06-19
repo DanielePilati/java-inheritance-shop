@@ -8,12 +8,23 @@ public class Smartphone extends Prodotto {
 	private short memory;
 	
 	public Smartphone () {
-		this.imeiCode = SerioUtil.format09Left(SerioUtil.getRandomLong())+SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.imeiCode = SerioUtil.getIMEICode();
 	}
 	public Smartphone (Short memory) {
-		this.imeiCode = SerioUtil.format09Left(SerioUtil.getRandomLong())+SerioUtil.format05Left(SerioUtil.getRandomShort());
+		this.imeiCode =  SerioUtil.getIMEICode();
 		this.memory = memory;
 	}
+	public Smartphone (String nome, Short memory) {
+		super(nome);
+		this.imeiCode =  SerioUtil.getIMEICode();
+		this.memory = memory;
+	}
+	public Smartphone (String nome, String marca,Short memory) {
+		super(nome, marca);
+		this.imeiCode =  SerioUtil.getIMEICode();
+		this.memory = memory;
+	}
+	
 		
 	public String getImeiCode() {
 		return imeiCode;

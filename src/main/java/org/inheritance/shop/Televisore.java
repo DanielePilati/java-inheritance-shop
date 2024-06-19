@@ -8,6 +8,16 @@ public class Televisore extends Prodotto{
 	public Televisore () {
 		
 	}
+	public Televisore (String nome, double inch, boolean isSmart) {
+		super(nome);
+		this.inch = inch;
+		this.isSmart = isSmart;
+	}
+	public Televisore (String nome, String marca,  double inch, boolean isSmart) {
+		super(nome, marca);
+		this.inch = inch;
+		this.isSmart = isSmart;
+	}
 	public Televisore (double inch, boolean isSmart) {
 		this.inch = inch;
 		this.isSmart = isSmart;

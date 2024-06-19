@@ -30,6 +30,15 @@ public class SerioUtil {
 	public static String format09Left(long code) {
 		return String.format("%09d",code);
 	}
+	
+	public static String getIMEICode() {
+		return format09Left(getRandomLong())+format05Left(getRandomShort());
+	}
+	
+	public static String getRandomCode () {
+		return format05Left(getRandomShort());
+	}
+	
 
 	
 	
