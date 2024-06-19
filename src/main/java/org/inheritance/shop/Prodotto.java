@@ -72,8 +72,8 @@ public class Prodotto {
 		System.out.println("Codice : " + this.codice);
 		System.out.println("Nome : " + this.nome);
 		System.out.println("Marca : " + this.marca);
-		System.out.println("Prezzo : " + this.marca);
-		System.out.println("iva : " + this.marca);
+		System.out.println("Prezzo : " + this.prezzo);
+		System.out.println("iva : " + this.iva);
 		System.out.println("--------------- /Dettagli Prodotto -------------");
 	}
 }

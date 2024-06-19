@@ -7,26 +7,22 @@ public class Cuffie extends Prodotto{
 	
 	public Cuffie () {
 	}
-	public Cuffie (String nome, String colore, boolean isWireless) {
+	public Cuffie (String nome) {
 		super(nome);
+	}
+	public Cuffie (String nome, String marca) {
+		super(nome, marca);
+	}
+	public Cuffie (String nome, String marca, String colore) {
+		super(nome, marca);
 		this.colore = colore;
-		this.isWireless = isWireless;
 	}
 	public Cuffie (String nome, String marca, String colore, boolean isWireless) {
 		super(nome, marca);
 		this.colore = colore;
 		this.isWireless = isWireless;
 	}
-	public Cuffie (String colore, boolean isWireless) {
-		this.colore = colore;
-		this.isWireless = isWireless;
-	}
-	public Cuffie (String colore) {
-		this.colore = colore;
-	}
-	public Cuffie (boolean isWireless) {
-		this.isWireless = isWireless;
-	}
+
 	
 	
 	public String getColore() {

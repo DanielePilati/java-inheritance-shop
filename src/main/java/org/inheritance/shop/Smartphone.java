@@ -10,6 +10,9 @@ public class Smartphone extends Prodotto {
 	public Smartphone () {
 		this.imeiCode = SerioUtil.getIMEICode();
 	}
+	public Smartphone (String nome) {
+		super(nome);
+	}
 	public Smartphone (Short memory) {
 		this.imeiCode =  SerioUtil.getIMEICode();
 		this.memory = memory;
@@ -21,6 +24,16 @@ public class Smartphone extends Prodotto {
 	}
 	public Smartphone (String nome, String marca,Short memory) {
 		super(nome, marca);
+		this.imeiCode =  SerioUtil.getIMEICode();
+		this.memory = memory;
+	}
+	public Smartphone (String nome, String marca,Short memory, double prezzo) {
+		super(nome, marca, prezzo);
+		this.imeiCode =  SerioUtil.getIMEICode();
+		this.memory = memory;
+	}
+	public Smartphone (String nome, String marca,Short memory, double prezzo, double iva) {
+		super(nome, marca, prezzo, iva);
 		this.imeiCode =  SerioUtil.getIMEICode();
 		this.memory = memory;
 	}
