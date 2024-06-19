@@ -33,7 +33,6 @@ public class Smartphone extends Prodotto {
 		this.memory = memory;
 	}
 
-	
 		
 	public String getImeiCode() {
 		return imeiCode;
@@ -48,5 +47,10 @@ public class Smartphone extends Prodotto {
 		this.memory = memory;
 	}
 	
-	
+	public void dettagliProdotto() {
+		super.dettagliProdotto();
+		System.out.println("Memoria : " + this.memory);
+		System.out.println("Codice IMEI : " + this.imeiCode);
+		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
 }

@@ -7,7 +7,7 @@ public class Prodotto {
 	protected String nome;
 	protected String marca;
 	protected double prezzo;
-	protected double iva;
+	protected double iva = 1.22;
 	
 	public Prodotto() {
 		this.codice = SerioUtil.getRandomCode();;
@@ -74,6 +74,9 @@ public class Prodotto {
 		System.out.println("Marca : " + this.marca);
 		System.out.println("Prezzo : " + this.prezzo);
 		System.out.println("iva : " + this.iva);
-		System.out.println("--------------- /Dettagli Prodotto -------------");
+		System.out.println("Prezzo ivato : " + getPrezzoIvato());
+	}
+	public double getPrezzoIvato() {
+		return this.prezzo * this.iva;
 	}
 }

@@ -41,4 +41,12 @@ public class Cuffie extends Prodotto{
 	public void setWireless(boolean isWireless) {
 		this.isWireless = isWireless;
 	}
+	
+	
+	public void dettagliProdotto() {
+		super.dettagliProdotto();
+		System.out.println("Colore : " + this.colore);
+		System.out.println("Sono Wireless : " + this.isWireless);
+		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
 }
