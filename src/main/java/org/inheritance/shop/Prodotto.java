@@ -61,7 +61,7 @@ public class Prodotto {
 		this.prezzo = prezzo;
 	}
 	public double getIva() {
-		return iva;
+		return (this.prezzo*this.iva)-this.prezzo;
 	}
 	public void setIva(double iva) {
 		this.iva = iva;
@@ -72,9 +72,9 @@ public class Prodotto {
 		System.out.println("Codice : " + this.codice);
 		System.out.println("Nome : " + this.nome);
 		System.out.println("Marca : " + this.marca);
-		System.out.println("Prezzo : " + this.prezzo);
-		System.out.println("iva : " + this.iva);
-		System.out.println("Prezzo ivato : " + getPrezzoIvato());
+		System.out.println("Prezzo : " + SerioUtil.getDecimalFormat(this.prezzo));
+		System.out.println("iva : " + SerioUtil.getDecimalFormat(getIva()));
+		System.out.println("Prezzo ivato : " + SerioUtil.getDecimalFormat(getPrezzoIvato()));
 	}
 	public double getPrezzoIvato() {
 		return this.prezzo * this.iva;

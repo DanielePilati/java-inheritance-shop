@@ -1,5 +1,7 @@
 package org.inheritance.shop.serio.utilities;
 
+import java.text.DecimalFormat;
+
 public class SerioUtil {
 
 	public static short getRandomShort() {
@@ -39,9 +41,10 @@ public class SerioUtil {
 		return format05Left(getRandomShort());
 	}
 	
-
-	
-	
+	public static String getDecimalFormat(double number) {
+		final DecimalFormat decfor = new DecimalFormat("0.00");  
+		return decfor.format(number);
+	}
 	
 	
 }
