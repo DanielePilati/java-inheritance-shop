@@ -66,6 +66,9 @@ import org.inheritance.shop.utilities.*;
 	public void setIva(double iva) {
 		this.iva = iva;
 	}
+	public double getPrezzoIvato() {
+		return this.prezzo * this.iva;
+	}
 	
 	public void dettagliProdotto() {
 		System.out.println("--------------- Dettagli Prodotto --------------");
@@ -76,7 +79,18 @@ import org.inheritance.shop.utilities.*;
 		System.out.println("iva : " + UtilsGenerator.toDecimalFormat(getIva()));
 		System.out.println("Prezzo ivato : " + UtilsGenerator.toDecimalFormat(getPrezzoIvato()));
 	}
-	public double getPrezzoIvato() {
-		return this.prezzo * this.iva;
+	
+	@Override
+	public String toString() {
+		return "--------------- Dettagli Prodotto --------------" +
+				"\n Codice : " + this.codice +
+				"\n Nome : " + this.nome +
+				"\n Marca : " + this.marca +
+				"\n Prezzo : " + UtilsGenerator.toDecimalFormat(this.prezzo) +
+				"\n iva : " + UtilsGenerator.toDecimalFormat(getIva()) +
+				"\n Prezzo ivato : " + UtilsGenerator.toDecimalFormat(getPrezzoIvato());
 	}
+	
+	
+
 }

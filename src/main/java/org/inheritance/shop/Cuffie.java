@@ -42,10 +42,19 @@ public class Cuffie extends Prodotto{
 		this.isWireless = isWireless;
 	}
 	
+    @Override
 	public void dettagliProdotto() {
 		super.dettagliProdotto();
 		System.out.println("Colore : " + this.colore);
 		System.out.println("Sono Wireless : " + this.isWireless);
 		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
+    
+	@Override
+	public String toString() {
+		return  super.toString() + 
+				"\n Colore : " + this.colore +
+				"\n Sono Wireless : " + this.isWireless +
+				"\n --------------- /Dettagli Prodotto -------------";
 	}
 }

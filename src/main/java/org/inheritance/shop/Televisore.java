@@ -44,10 +44,18 @@ package org.inheritance.shop;
 		this.isSmart = isSmart;
 	}
 	
+    @Override
 	public void dettagliProdotto() {
 		super.dettagliProdotto();
 		System.out.println("Pollici : " + this.inch);
 		System.out.println("Smart : " + this.isSmart);
 		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
+	@Override
+	public String toString() {
+		return  super.toString() + 
+				"\n Pollici : " + this.inch +
+				"\n Smart : " + this.isSmart +
+				"\n --------------- /Dettagli Prodotto -------------";
 	}
 }

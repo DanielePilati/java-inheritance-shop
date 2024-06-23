@@ -20,7 +20,6 @@ public class Carrello {
 		
 		while (addStatus) {
 			
-			
 			while (addStatus) {
 				
 				System.out.println("/---------------------------------------------\\");
@@ -67,11 +66,13 @@ public class Carrello {
 					break;
 				}
 			}
+			input.close();
 		}
+		
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
 			System.out.println("------- Prodotto: "+ listaProdotti.indexOf(prodotto)+1 +" -------------");
-	    	prodotto.dettagliProdotto();
+	    	System.out.println(prodotto.toString());
 	      }
 	}
 }

@@ -47,10 +47,18 @@ class Smartphone extends Prodotto {
 		this.memory = memory;
 	}
 	
+    @Override
 	public void dettagliProdotto() {
 		super.dettagliProdotto();
 		System.out.println("Memoria : " + this.memory);
 		System.out.println("Codice IMEI : " + this.imeiCode);
 		System.out.println("--------------- /Dettagli Prodotto -------------");
+	}
+	@Override
+	public String toString() {
+		return  super.toString() +
+				"\n Memoria : " + this.memory +
+				"\n Codice IMEI : " + this.imeiCode +
+				"\n --------------- /Dettagli Prodotto -------------";
 	}
 }
