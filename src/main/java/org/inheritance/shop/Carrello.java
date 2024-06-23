@@ -15,7 +15,7 @@ public class Carrello {
 		
 		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
 		
-		LinkedList<Prodotto> listaProdotti =new LinkedList<Prodotto>();
+		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
 		
 		
 		while (addStatus) {
@@ -30,19 +30,19 @@ public class Carrello {
 				if (tipiDiProdotto[0].equals(rispostaUtente)) {
 					
 					listaProdotti.add(new Smartphone("Galaxy","Samsung", (short) 256, 22.50)); 
-					System.out.println("/--------- Prodotto Smartphone inserito -----\\");
+					System.out.println("/--------- Prodotto Smartphone inserito -------\\");
 					break;
 					
 				} else if (tipiDiProdotto[1].equals(rispostaUtente)) {
 					
 					listaProdotti.add(new Televisore("Cadzum","LG", 55, false, 22.50)); 
-					System.out.println("/--------- Prodotto Televisore inserito -----\\");
+					System.out.println("/--------- Prodotto Televisore inserito -------\\");
 					break;
 					
 				} else if (tipiDiProdotto[2].equals(rispostaUtente)) {
 					
 					listaProdotti.add(new Cuffie("MDR","Sony", "Rosso", true, 22.50)); 
-					System.out.println("/--------- Prodotto Cuffie inserito ---------\\");
+					System.out.println("/--------- Prodotto Cuffie inserito -----------\\");
 					break;
 				} else {
 					System.out.println("*** Hai inserito: "+ rispostaUtente +" ***");
