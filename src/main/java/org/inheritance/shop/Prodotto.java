@@ -1,38 +1,38 @@
 package org.inheritance.shop;
-import org.inheritance.shop.serio.utilities.*;
+import org.inheritance.shop.utilities.*;
 
-public class Prodotto {
+ class Prodotto {
 
-	protected String codice;
-	protected String nome;
-	protected String marca;
-	protected double prezzo;
-	protected double iva = 1.22;
+	private String codice;
+	private String nome;
+	private String marca;
+	private double prezzo;
+	private double iva = 1.22;
 	
 	public Prodotto() {
-		this.codice = SerioUtil.getRandomCode();;
+		this.codice = UtilsGenerator.generateRandomCode();
 	}
 	
 	public Prodotto(String nome) {
-		this.codice = SerioUtil.getRandomCode();;
+		this.codice = UtilsGenerator.generateRandomCode();
 		this.nome = nome;
 	}
 	
 	public Prodotto(String nome, String marca) {
-		this.codice = SerioUtil.getRandomCode();;
+		this.codice = UtilsGenerator.generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo) {
-		this.codice = SerioUtil.getRandomCode();
+		this.codice = UtilsGenerator.generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo, double iva) {
-		this.codice = SerioUtil.getRandomCode();;
+		this.codice = UtilsGenerator.generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
@@ -72,9 +72,9 @@ public class Prodotto {
 		System.out.println("Codice : " + this.codice);
 		System.out.println("Nome : " + this.nome);
 		System.out.println("Marca : " + this.marca);
-		System.out.println("Prezzo : " + SerioUtil.getDecimalFormat(this.prezzo));
-		System.out.println("iva : " + SerioUtil.getDecimalFormat(getIva()));
-		System.out.println("Prezzo ivato : " + SerioUtil.getDecimalFormat(getPrezzoIvato()));
+		System.out.println("Prezzo : " + UtilsGenerator.toDecimalFormat(this.prezzo));
+		System.out.println("iva : " + UtilsGenerator.toDecimalFormat(getIva()));
+		System.out.println("Prezzo ivato : " + UtilsGenerator.toDecimalFormat(getPrezzoIvato()));
 	}
 	public double getPrezzoIvato() {
 		return this.prezzo * this.iva;

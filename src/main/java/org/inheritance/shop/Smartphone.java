@@ -1,35 +1,35 @@
 package org.inheritance.shop;
 
-import org.inheritance.shop.serio.utilities.SerioUtil;
+import org.inheritance.shop.utilities.UtilsGenerator;
 
-public class Smartphone extends Prodotto {
+class Smartphone extends Prodotto {
 	
 	private String imeiCode;
 	private short memory;
 	
 	public Smartphone () {
-		this.imeiCode = SerioUtil.getIMEICode();
+		this.imeiCode = UtilsGenerator.generateIMEICode();
 	}
 	public Smartphone (String nome) {
 		super(nome);
 	}
 	public Smartphone (Short memory) {
-		this.imeiCode =  SerioUtil.getIMEICode();
+		this.imeiCode =  UtilsGenerator.generateIMEICode();
 		this.memory = memory;
 	}
 	public Smartphone (String nome, Short memory) {
 		super(nome);
-		this.imeiCode =  SerioUtil.getIMEICode();
+		this.imeiCode =  UtilsGenerator.generateIMEICode();
 		this.memory = memory;
 	}
 	public Smartphone (String nome, String marca,Short memory) {
 		super(nome, marca);
-		this.imeiCode =  SerioUtil.getIMEICode();
+		this.imeiCode =  UtilsGenerator.generateIMEICode();
 		this.memory = memory;
 	}
 	public Smartphone (String nome, String marca,Short memory, double prezzo) {
 		super(nome, marca, prezzo);
-		this.imeiCode =  SerioUtil.getIMEICode();
+		this.imeiCode =  UtilsGenerator.generateIMEICode();
 		this.memory = memory;
 	}
 

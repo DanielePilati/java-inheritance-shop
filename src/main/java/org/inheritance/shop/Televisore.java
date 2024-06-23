@@ -1,6 +1,6 @@
 package org.inheritance.shop;
 
-public class Televisore extends Prodotto{
+ class Televisore extends Prodotto{
 
 	private double inch;
 	private boolean isSmart;
