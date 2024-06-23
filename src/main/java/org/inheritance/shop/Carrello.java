@@ -70,7 +70,7 @@ public class Carrello {
 		}
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
-			System.out.println("------- Prodotto: "+ listaProdotti.indexOf(prodotto) +" -------------");
+			System.out.println("------- Prodotto: "+ listaProdotti.indexOf(prodotto)+1 +" -------------");
 	    	prodotto.dettagliProdotto();
 	      }
 	}
