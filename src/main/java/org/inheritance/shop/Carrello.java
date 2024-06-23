@@ -66,12 +66,11 @@ public class Carrello {
 					break;
 				}
 			}
-			input.close();
 		}
-		
+		input.close();
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
-			System.out.println("------- Prodotto: "+ listaProdotti.indexOf(prodotto)+1 +" -------------");
+			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1)+" -------------");
 	    	System.out.println(prodotto.toString());
 	      }
 	}
