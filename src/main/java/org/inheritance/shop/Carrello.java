@@ -14,7 +14,9 @@ public class Carrello {
 	      }
 	}
 		
-	private static void checkOutChoice(boolean addStatus, Scanner input) {
+	private static void checkOutChoice(boolean addStatus) {
+		
+		Scanner input = new Scanner(System.in);
 		
 		while (addStatus) {
 			System.out.println("/----------------------------------------------\\");
@@ -34,10 +36,13 @@ public class Carrello {
 				break;
 			}
 		}
+		input.close();
 	}
 	
-	private static void productInsert(boolean addStatus, Scanner input, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
+	private static void productInsert(boolean addStatus, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
 	
+		Scanner input = new Scanner(System.in);
+		
 		while (addStatus) {
 			System.out.println("/---------------------------------------------\\");
 			System.out.println("/------- Quale Prodotto Vuoi Inserire? -------\\");
@@ -68,8 +73,6 @@ public class Carrello {
 	}
 	
 	public static void main(String[] args) {
-			
-		Scanner input = new Scanner(System.in);
 		
 		boolean addStatus = true;
 
@@ -78,8 +81,8 @@ public class Carrello {
 		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
 			
 		while (addStatus) {		
-			Carrello.productInsert(addStatus,input,listaProdotti,tipiDiProdotto);
-			checkOutChoice(addStatus, input);
+			Carrello.productInsert(addStatus,listaProdotti,tipiDiProdotto);
+			checkOutChoice(addStatus);
 		}
 		checkOut(listaProdotti);
 	}
