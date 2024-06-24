@@ -17,7 +17,6 @@ public class Carrello {
 		
 		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
 		
-		
 		while (addStatus) {
 			
 			while (addStatus) {
@@ -43,7 +42,8 @@ public class Carrello {
 					
 					listaProdotti.add(new Cuffie("MDR","Sony", "Rosso", true, 22.50)); 
 					System.out.println("/--------- Prodotto Cuffie inserito -----------\\");
-					break;
+					break; 
+					
 				} else {
 					System.out.println("*** Hai inserito: "+ rispostaUtente +" ***");
 					System.out.println("*** Inserisci: Smartphone, Televisore, Cuffie ***");
@@ -60,8 +60,10 @@ public class Carrello {
 				if (rispostaUtente.equals("N")) {
 					addStatus=false;
 					break;
-				} else if (!rispostaUtente.equals("S")) {
+					
+				} else if (!rispostaUtente.equals("S")) {	
 					System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
+					
 				} else {
 					break;
 				}
@@ -70,7 +72,7 @@ public class Carrello {
 		input.close();
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
-			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1)+" -------------");
+			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1) +" -------------");
 	    	System.out.println(prodotto.toString());
 	      }
 	}
