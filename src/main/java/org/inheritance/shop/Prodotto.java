@@ -1,4 +1,6 @@
 package org.inheritance.shop;
+import java.text.DecimalFormat;
+
 import org.inheritance.shop.utilities.*;
 
  class Prodotto {
@@ -10,29 +12,29 @@ import org.inheritance.shop.utilities.*;
 	private double iva = 1.22;
 	
 	public Prodotto() {
-		this.codice = UtilsGenerator.generateRandomCode();
+		this.codice = generateRandomCode();
 	}
 	
 	public Prodotto(String nome) {
-		this.codice = UtilsGenerator.generateRandomCode();
+		this.codice = generateRandomCode();
 		this.nome = nome;
 	}
 	
 	public Prodotto(String nome, String marca) {
-		this.codice = UtilsGenerator.generateRandomCode();
+		this.codice = generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo) {
-		this.codice = UtilsGenerator.generateRandomCode();
+		this.codice = generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo, double iva) {
-		this.codice = UtilsGenerator.generateRandomCode();
+		this.codice = generateRandomCode();
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
@@ -40,22 +42,22 @@ import org.inheritance.shop.utilities.*;
 	}
 	
 	public String getCodice() {
-		return codice;
+		return this.codice;
 	}
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public String getMarca() {
-		return marca;
+		return this.marca;
 	}
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
 	public double getPrezzo() {
-		return prezzo;
+		return this.prezzo;
 	}
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
@@ -75,9 +77,9 @@ import org.inheritance.shop.utilities.*;
 		System.out.println("Codice : " + this.codice);
 		System.out.println("Nome : " + this.nome);
 		System.out.println("Marca : " + this.marca);
-		System.out.println("Prezzo : " + UtilsGenerator.toDecimalFormat(this.prezzo));
-		System.out.println("iva : " + UtilsGenerator.toDecimalFormat(getIva()));
-		System.out.println("Prezzo ivato : " + UtilsGenerator.toDecimalFormat(getPrezzoIvato()));
+		System.out.println("Prezzo : " + toDecimalFormat(this.prezzo));
+		System.out.println("iva : " + toDecimalFormat(getIva()));
+		System.out.println("Prezzo ivato : " + toDecimalFormat(getPrezzoIvato()));
 	}
 	
 	@Override
@@ -86,11 +88,22 @@ import org.inheritance.shop.utilities.*;
 				"\n Codice : " + this.codice +
 				"\n Nome : " + this.nome +
 				"\n Marca : " + this.marca +
-				"\n Prezzo : " + UtilsGenerator.toDecimalFormat(this.prezzo) +
-				"\n iva : " + UtilsGenerator.toDecimalFormat(getIva()) +
-				"\n Prezzo ivato : " + UtilsGenerator.toDecimalFormat(getPrezzoIvato());
+				"\n Prezzo : " + toDecimalFormat(this.prezzo) +
+				"\n iva : " + toDecimalFormat(getIva()) +
+				"\n Prezzo ivato : " + toDecimalFormat(getPrezzoIvato());
 	}
 	
+	public static String generateRandomCode () {
+		return format05Left(UtilsGenerator.generateRandomShort());
+	}
 	
+	public static String format05Left(short code) {
+		return String.format("%05d",code);
+	}
+	
+	public static String toDecimalFormat(double number) {
+		final DecimalFormat decfor = new DecimalFormat("0.00");  
+		return decfor.format(number);
+	}
 
 }

@@ -6,25 +6,24 @@ package org.inheritance.shop;
 	private boolean isSmart;
 	
 	public Televisore () {
-		
 	}
 	public Televisore (String nome) {
-		super(nome);
+		super (nome);
 	}
 	public Televisore (String nome, String marca) {
-		super(nome, marca);
+		super (nome, marca);
 	}
 	public Televisore (String nome, String marca,  double inch) {
-		super(nome, marca);
+		super (nome, marca);
 		this.inch = inch;
 	}
 	public Televisore (String nome, String marca,  double inch, boolean isSmart) {
-		super(nome, marca);
+		super (nome, marca);
 		this.inch = inch;
 		this.isSmart = isSmart;
 	}
 	public Televisore (String nome, String marca,  double inch, boolean isSmart, double prezzo) {
-		super(nome, marca, prezzo);
+		super (nome, marca, prezzo);
 		this.inch = inch;
 		this.isSmart = isSmart;
 	}

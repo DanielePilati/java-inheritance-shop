@@ -8,17 +8,17 @@ public class Cuffie extends Prodotto{
 	public Cuffie () {
 	}
 	public Cuffie (String nome) {
-		super(nome);
+		super (nome);
 	}
 	public Cuffie (String nome, String marca) {
-		super(nome, marca);
+		super (nome, marca);
 	}
 	public Cuffie (String nome, String marca, String colore) {
-		super(nome, marca);
+		super (nome, marca);
 		this.colore = colore;
 	}
 	public Cuffie (String nome, String marca, String colore, boolean isWireless) {
-		super(nome, marca);
+		super (nome, marca);
 		this.colore = colore;
 		this.isWireless = isWireless;
 	}
@@ -30,13 +30,13 @@ public class Cuffie extends Prodotto{
 	
 	
 	public String getColore() {
-		return colore;
+		return this.colore;
 	}
 	public void setColore(String colore) {
 		this.colore = colore;
 	}
 	public boolean isWireless() {
-		return isWireless;
+		return this.isWireless;
 	}
 	public void setWireless(boolean isWireless) {
 		this.isWireless = isWireless;

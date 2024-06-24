@@ -7,73 +7,90 @@ public class Carrello {
 
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(System.in);
+		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
+		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
 		
-		String rispostaUtente;
+		listaProdotti = productInsert(tipiDiProdotto);
+		
+		
+	private static void visualizzaCarrello() {
+			
+		Scanner input = new Scanner(System.in);
 		
 		boolean addStatus = true;
 		
-		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
-		
-		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
+		String rispostaUtente;
 		
 		while (addStatus) {
+		
+			System.out.println("/----------------------------------------------\\");		
+			System.out.println("/--------- Vuoi inserire altri prodotti? ------\\");	
+			System.out.println("/-- (S : continua / N : visualizza carrello) --\\");
 			
-			while (addStatus) {
+			rispostaUtente = input.nextLine().toUpperCase();
+			
+			if (rispostaUtente.equals("N")) {
+			
+				addStatus=false;	
+				break;	
 				
-				System.out.println("/---------------------------------------------\\");
-				System.out.println("/------- Quale Prodotto Vuoi Inserire? -------\\");
-				System.out.println("/------ (Smartphone, Televisore, Cuffie) -----\\");
-				rispostaUtente = input.nextLine().toUpperCase();
+			} else if (!rispostaUtente.equals("S")) {	
+			
+				addStatus = true;
+				System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
 				
-				if (tipiDiProdotto[0].equals(rispostaUtente)) {
-					
-					listaProdotti.add(new Smartphone("Galaxy","Samsung", (short) 256, 22.50)); 
-					System.out.println("/--------- Prodotto Smartphone inserito -------\\");
-					break;
-					
-				} else if (tipiDiProdotto[1].equals(rispostaUtente)) {
-					
-					listaProdotti.add(new Televisore("Cadzum","LG", 55, false, 22.50)); 
-					System.out.println("/--------- Prodotto Televisore inserito -------\\");
-					break;
-					
-				} else if (tipiDiProdotto[2].equals(rispostaUtente)) {
-					
-					listaProdotti.add(new Cuffie("MDR","Sony", "Rosso", true, 22.50)); 
-					System.out.println("/--------- Prodotto Cuffie inserito -----------\\");
-					break; 
-					
-				} else {
-					System.out.println("*** Hai inserito: "+ rispostaUtente +" ***");
-					System.out.println("*** Inserisci: Smartphone, Televisore, Cuffie ***");
-				}
+			} else {
+				
+				addStatus = false;	
+				break;
 			}
 			
-			while (addStatus) {
+			input.close();	
+		}
 				
-				System.out.println("/----------------------------------------------\\");
-				System.out.println("/--------- Vuoi inserire altri prodotti? ------\\");
-				System.out.println("/-- (S : continua / N : visualizza carrello) --\\");
-				rispostaUtente = input.nextLine().toUpperCase();
+	}
+
+	
+	
+	private static Prodotto productInsert(String[]...tipiDiProdotto) {
+		
+		Scanner input = new Scanner(System.in);
+		boolean addStatus = true;
+		String rispostaUtente;
+		
+		while (addStatus) {
+			System.out.println("/---------------------------------------------\\");
+			System.out.println("/------- Quale Prodotto Vuoi Inserire? -------\\");
+			System.out.println("/------ (Smartphone, Televisore, Cuffie) -----\\");
+			rispostaUtente = input.nextLine().toUpperCase();
+			
+			if (tipiDiProdotto[0].equals(rispostaUtente)) {
 				
-				if (rispostaUtente.equals("N")) {
-					addStatus=false;
-					break;
-					
-				} else if (!rispostaUtente.equals("S")) {	
-					System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
-					
-				} else {
-					break;
-				}
+				listaProdotti.add(new Smartphone("Galaxy","Samsung", (short) 256, 22.50)); 
+				System.out.println("/--------- Prodotto Smartphone inserito -------\\");
+				addStatus = false;
+				break;
+				
+			} else if (tipiDiProdotto[1].equals(rispostaUtente)) {
+				
+				listaProdotti.add(new Televisore("Cadzum","LG", 55, false, 22.50)); 
+				System.out.println("/--------- Prodotto Televisore inserito -------\\");
+				addStatus = false;
+				break;
+				
+			} else if (tipiDiProdotto[2].equals(rispostaUtente)) {
+				
+				listaProdotti.add(new Cuffie("MDR","Sony", "Rosso", true, 22.50)); 
+				System.out.println("/--------- Prodotto Cuffie inserito -----------\\");
+				addStatus = false;
+				break; 
+				
+			} else {
+				System.out.println("*** Hai inserito: "+ rispostaUtente +" ***");
+				System.out.println("*** Inserisci: Smartphone, Televisore, Cuffie ***");
 			}
 		}
 		input.close();
-		System.out.println("------- Il tuo carrello: -------------");
-		for (Prodotto prodotto : listaProdotti) {
-			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1) +" -------------");
-	    	System.out.println(prodotto.toString());
-	      }
+		return listaProdotti;
 	}
 }
