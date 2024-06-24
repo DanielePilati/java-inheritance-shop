@@ -73,13 +73,8 @@ import org.inheritance.shop.utilities.*;
 	}
 	
 	public void dettagliProdotto() {
-		System.out.println("--------------- Dettagli Prodotto --------------");
-		System.out.println("Codice : " + this.codice);
-		System.out.println("Nome : " + this.nome);
-		System.out.println("Marca : " + this.marca);
-		System.out.println("Prezzo : " + toDecimalFormat(this.prezzo));
-		System.out.println("iva : " + toDecimalFormat(getIva()));
-		System.out.println("Prezzo ivato : " + toDecimalFormat(getPrezzoIvato()));
+		System.out.println(this.toString());
+
 	}
 	
 	@Override

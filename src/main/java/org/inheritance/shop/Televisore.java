@@ -46,9 +46,8 @@ package org.inheritance.shop;
     @Override
 	public void dettagliProdotto() {
 		super.dettagliProdotto();
-		System.out.println("Pollici : " + this.inch);
-		System.out.println("Smart : " + this.isSmart);
-		System.out.println("--------------- /Dettagli Prodotto -------------");
+		System.out.println(this.toString());
+
 	}
 	@Override
 	public String toString() {

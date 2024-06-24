@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Carrello {
 	
+	private static Scanner input = null;
 	
 	private static void checkOut(LinkedList<Prodotto> listaProdotti) {
 		System.out.println("------- Il tuo carrello: -------------");
@@ -14,34 +15,28 @@ public class Carrello {
 	      }
 	}
 		
-	private static void checkOutChoice(boolean addStatus) {
+	private static boolean checkOutChoice() {
 		
-		Scanner input = new Scanner(System.in);
-		
-		while (addStatus) {
+		while (true) {
 			System.out.println("/----------------------------------------------\\");
 			System.out.println("/--------- Vuoi inserire altri prodotti? ------\\");
 			System.out.println("/-- (S : continua / N : visualizza carrello) --\\");
 			String rispostaUtente = input.nextLine().toUpperCase();
 			
 			if (rispostaUtente.equals("N")) {
-				addStatus=false;
-				break;
-				
-			} else if (!rispostaUtente.equals("S")) {	
-				System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
-				
-			} else {
-				addStatus = true;
-				break;
+				return false;	
 			}
+			
+			if (rispostaUtente.equals("S")) {			
+				return true;
+				
+			} 
+			System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
 		}
-		input.close();
 	}
 	
 	private static void productInsert(boolean addStatus, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
-	
-		Scanner input = new Scanner(System.in);
+
 		
 		while (addStatus) {
 			System.out.println("/---------------------------------------------\\");
@@ -69,10 +64,11 @@ public class Carrello {
 				System.out.println("*** Inserisci: Smartphone, Televisore, Cuffie ***");
 			}
 		}
-		input.close();
 	}
 	
 	public static void main(String[] args) {
+		
+		input = new Scanner(System.in);
 		
 		boolean addStatus = true;
 
@@ -82,8 +78,10 @@ public class Carrello {
 			
 		while (addStatus) {		
 			Carrello.productInsert(addStatus,listaProdotti,tipiDiProdotto);
-			checkOutChoice(addStatus);
+			addStatus = checkOutChoice();
 		}
 		checkOut(listaProdotti);
+		
+		input.close();
 	}
 }
