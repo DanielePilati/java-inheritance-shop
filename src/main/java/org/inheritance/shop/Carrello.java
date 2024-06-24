@@ -7,14 +7,30 @@ public class Carrello {
 	
 	private static Scanner input = null;
 	
+	public static void main(String[] args) {
+		
+		input = new Scanner(System.in);
+		
+		boolean addStatus = true;
+
+		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
+				
+		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
+			
+		while (addStatus) {		
+			productInsert(addStatus,listaProdotti,tipiDiProdotto);
+			addStatus = checkOutChoice();
+		}
+		checkOut(listaProdotti);
+		input.close();
+	}
 	private static void checkOut(LinkedList<Prodotto> listaProdotti) {
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
 			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1) +" -------------");
 	    	System.out.println(prodotto.toString());
 	      }
-	}
-		
+	}		
 	private static boolean checkOutChoice() {
 		
 		while (true) {
@@ -26,17 +42,13 @@ public class Carrello {
 			if (rispostaUtente.equals("N")) {
 				return false;	
 			}
-			
 			if (rispostaUtente.equals("S")) {			
-				return true;
-				
+				return true;	
 			} 
 			System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
 		}
 	}
-	
 	private static void productInsert(boolean addStatus, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
-
 		
 		while (addStatus) {
 			System.out.println("/---------------------------------------------\\");
@@ -64,24 +76,5 @@ public class Carrello {
 				System.out.println("*** Inserisci: Smartphone, Televisore, Cuffie ***");
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		
-		input = new Scanner(System.in);
-		
-		boolean addStatus = true;
-
-		LinkedList<Prodotto> listaProdotti = new LinkedList<Prodotto>();
-				
-		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
-			
-		while (addStatus) {		
-			Carrello.productInsert(addStatus,listaProdotti,tipiDiProdotto);
-			addStatus = checkOutChoice();
-		}
-		checkOut(listaProdotti);
-		
-		input.close();
 	}
 }
