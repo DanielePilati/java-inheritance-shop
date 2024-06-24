@@ -36,7 +36,7 @@ public class Carrello {
 		}
 	}
 	
-	private static void productInsert(boolean addStatus, Scanner input, LinkedList<Prodotto> listaProdotti, String[]...tipiDiProdotto) {	
+	private static void productInsert(boolean addStatus, Scanner input, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
 	
 		while (addStatus) {
 			System.out.println("/---------------------------------------------\\");
