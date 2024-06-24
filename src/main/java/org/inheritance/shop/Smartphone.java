@@ -12,11 +12,17 @@ class Smartphone extends Prodotto {
 	}
 	public Smartphone (String nome) {
 		super (nome);
-	}
+		this.imeiCode = generateIMEICode();
+	}	
 	public Smartphone (Short memory) {
-		this.imeiCode =  generateIMEICode();
+		this();
 		this.memory = memory;
 	}
+	public Smartphone (String nome, String marca) {
+		super (nome, marca);
+		this.imeiCode = generateIMEICode();
+	}
+
 	public Smartphone (String nome, Short memory) {
 		super (nome);
 		this.imeiCode =  generateIMEICode();
@@ -48,8 +54,8 @@ class Smartphone extends Prodotto {
 	}
 	
     @Override
-	public void dettagliProdotto() {
-		super.dettagliProdotto();
+	public void pritMe() {
+		super.pritMe();
 		System.out.println(this.toString());
 
 	}

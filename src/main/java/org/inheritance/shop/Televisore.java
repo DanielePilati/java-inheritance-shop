@@ -44,8 +44,8 @@ package org.inheritance.shop;
 	}
 	
     @Override
-	public void dettagliProdotto() {
-		super.dettagliProdotto();
+	public void pritMe() {
+		super.pritMe();
 		System.out.println(this.toString());
 
 	}

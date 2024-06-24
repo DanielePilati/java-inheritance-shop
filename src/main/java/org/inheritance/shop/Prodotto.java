@@ -16,28 +16,22 @@ import org.inheritance.shop.utilities.*;
 	}
 	
 	public Prodotto(String nome) {
-		this.codice = generateRandomCode();
+		this();
 		this.nome = nome;
 	}
 	
 	public Prodotto(String nome, String marca) {
-		this.codice = generateRandomCode();
-		this.nome = nome;
+		this(nome);
 		this.marca = marca;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo) {
-		this.codice = generateRandomCode();
-		this.nome = nome;
-		this.marca = marca;
+		this(nome, marca);
 		this.prezzo = prezzo;
 	}
 	
 	public Prodotto(String nome, String marca, double prezzo, double iva) {
-		this.codice = generateRandomCode();
-		this.nome = nome;
-		this.marca = marca;
-		this.prezzo = prezzo;
+		this(nome, marca, prezzo);
 		this.iva = iva;
 	}
 	
@@ -72,7 +66,7 @@ import org.inheritance.shop.utilities.*;
 		return this.prezzo * this.iva;
 	}
 	
-	public void dettagliProdotto() {
+	public void pritMe() {
 		System.out.println(this.toString());
 
 	}
