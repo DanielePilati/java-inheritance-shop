@@ -18,13 +18,14 @@ public class Carrello {
 		String[] tipiDiProdotto = {"SMARTPHONE", "TELEVISORE", "CUFFIE"};
 			
 		while (addStatus) {		
-			productInsert(addStatus,listaProdotti,tipiDiProdotto);
+			productInsert(listaProdotti,tipiDiProdotto);
 			addStatus = checkOutChoice();
 		}
 		checkOut(listaProdotti);
 		input.close();
 	}
 	private static void checkOut(LinkedList<Prodotto> listaProdotti) {
+		
 		System.out.println("------- Il tuo carrello: -------------");
 		for (Prodotto prodotto : listaProdotti) {
 			System.out.println("------- Prodotto: "+ (listaProdotti.indexOf(prodotto)+1) +" -------------");
@@ -48,9 +49,9 @@ public class Carrello {
 			System.out.println("/-------- (***** Inserisci S / N *****) -------\\");
 		}
 	}
-	private static void productInsert(boolean addStatus, LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
+	private static void productInsert(LinkedList<Prodotto> listaProdotti, String[] tipiDiProdotto) {	
 		
-		while (addStatus) {
+		while (true) {
 			System.out.println("/---------------------------------------------\\");
 			System.out.println("/------- Quale Prodotto Vuoi Inserire? -------\\");
 			System.out.println("/------ (Smartphone, Televisore, Cuffie) -----\\");
