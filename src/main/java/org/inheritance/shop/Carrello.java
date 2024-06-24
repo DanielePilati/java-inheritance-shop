@@ -81,5 +81,6 @@ public class Carrello {
 			Carrello.productInsert(addStatus,input,listaProdotti,tipiDiProdotto);
 			checkOutChoice(addStatus, input);
 		}
+		checkOut(listaProdotti);
 	}
 }
