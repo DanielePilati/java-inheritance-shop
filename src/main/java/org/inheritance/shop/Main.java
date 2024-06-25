@@ -6,11 +6,11 @@ public class Main {
 		
 	
 		Cuffie cuffie = new Cuffie("MDR","Sony", "Rosso", true, 22.50);
-		cuffie.dettagliProdotto();
+		cuffie.printMe();
 		Smartphone smartphone = new Smartphone("Galaxy","Samsung", (short) 256, 22.50);
-		smartphone.dettagliProdotto();
+		smartphone.printMe();
 		Televisore televisore = new Televisore("Cadzum","Neso", 55, false, 22.50);
-		televisore.dettagliProdotto();
+		televisore.printMe();
 		
 		
 	}

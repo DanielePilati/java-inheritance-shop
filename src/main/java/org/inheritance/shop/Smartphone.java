@@ -54,8 +54,8 @@ class Smartphone extends Prodotto {
 	}
 	
     @Override
-	public void pritMe() {
-		super.pritMe();
+	public void printMe() {
+		super.printMe();
 		System.out.println(this.toString());
 
 	}

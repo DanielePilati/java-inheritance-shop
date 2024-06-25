@@ -66,7 +66,7 @@ import org.inheritance.shop.utilities.*;
 		return this.prezzo * this.iva;
 	}
 	
-	public void pritMe() {
+	public void printMe() {
 		System.out.println(this.toString());
 
 	}

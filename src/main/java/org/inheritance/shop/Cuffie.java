@@ -43,8 +43,8 @@ public class Cuffie extends Prodotto{
 	}
 	
     @Override
-	public void pritMe() {
-		super.pritMe();
+	public void printMe() {
+		super.printMe();
 		System.out.println(this.toString());
 	}
     
